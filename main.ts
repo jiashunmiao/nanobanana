@@ -21,7 +21,7 @@ async function callOpenRouter(messages: any[], apiKey: string): Promise<{ type: 
     if (!apiKey) { throw new Error("callOpenRouter received an empty apiKey."); }
     const openrouterPayload = { model: "google/gemini-2.5-flash-image-preview", messages };
     console.log("Sending payload to OpenRouter:", JSON.stringify(openrouterPayload, null, 2));
-    const apiResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    const apiResponse = await fetch("https://toapis.com/v1", {
         method: "POST", headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
         body: JSON.stringify(openrouterPayload)
     });
